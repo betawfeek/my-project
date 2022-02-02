@@ -1,0 +1,98 @@
+#!/bin/bash
+source ~/.bashrc; 
+source ~/.bash_profile;
+########## CHECK snmpSubagent ########
+
+       if ps -ef | grep -v grep | grep "snmpSubagent" >/dev/null; then
+           echo "Checking snmpSubagent   :- snmpSubagent is running fine."
+           else
+           /bin/sh /home/oam/SNMP/SubAgent/StartSubagent.sh
+           echo "SNMP Sub Agent Started Successfully"             
+                fi
+echo ""
+echo "**************************************************************************************"
+echo ""
+
+########## CHECK snmd ########
+
+       if ps -ef | grep -v grep | grep "snmpd" >/dev/null; then
+           echo "Checking snmpd   :- snmpd is running fine."
+           else
+	   /sbin/service snmpd restart	
+           echo "SNMPD Started Successfully"             
+                fi
+echo ""
+echo "**************************************************************************************"
+echo ""
+
+########## CHECK snmptrapd ########
+
+       if ps -ef | grep -v grep | grep "snmptrapd" >/dev/null; then
+           echo "Checking snmptrapd   :- snmptrapd is running fine."
+           else
+           /sbin/service snmptrapd restart
+           echo "SNMPTRAPD Started Successfully"             
+                fi
+echo ""
+echo "**************************************************************************************"
+echo ""
+
+########## CHECK snmptt ########
+
+       if ps -ef | grep -v grep | grep "snmptt" >/dev/null; then
+           echo "Checking snmptt   :- snmptt is running fine."
+           else
+           /sbin/service snmptt restart
+           echo "SNMPTT Started Successfully"             
+                fi
+echo ""
+echo "**************************************************************************************"
+echo ""
+
+########## CHECK xinetd ########
+
+       if ps -ef | grep -v grep | grep "xinetd" >/dev/null; then
+           echo "Checking xinetd   :- xinetd is running fine."
+           else
+           /sbin/service xinetd restart
+           echo "XINETD Started Successfully"             
+                fi
+echo ""
+echo "**************************************************************************************"
+echo ""
+
+########## CHECK nagios ########
+
+       if ps -ef | grep -v grep | grep "nagios" >/dev/null; then
+           echo "Checking nagios   :- nagios is running fine."
+           else
+           /sbin/service nagios restart
+           echo "NAGIOS Started Successfully"             
+                fi
+echo ""
+echo "**************************************************************************************"
+echo ""
+
+########## CHECK PHP ########
+
+       if ps -ef | grep -v grep | grep "/usr/local/nginx_oam/etc/php-fpm.conf" >/dev/null; then
+           echo "Checking PHP   :- PHP Service is running fine."
+           else
+           /usr/local/nginx_oam/sbin/php-fpm
+           echo "PHP Service Started Successfully"             
+                fi
+echo ""
+echo "**************************************************************************************"
+echo ""
+
+########## CHECK NGINX ########
+
+       if ps -ef | grep -v grep | grep "/usr/local/nginx_oam/sbin/nginx" >/dev/null; then
+           echo "Checking NGINX   :- NGINX Service is running fine."
+           else
+           /usr/local/nginx_oam/sbin/nginx
+           echo "NGINX Service Started Successfully"             
+                fi
+echo ""
+echo "**************************************************************************************"
+echo ""

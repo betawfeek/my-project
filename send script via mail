@@ -1,0 +1,17 @@
+
+#!/bin/sh
+cd /nfsmount/Health_Check/
+tdate=`perl -e '@T=localtime(time-(3600));printf("%02d_%02d_20%02d",$T[3],$T[4]+1,($T[5]+1900)%100)' |awk -F"_" '{print $3"_"$2"_"$1}'`
+export SSHPASS=ecp@123
+rm -f SMP_KCA_Report_*
+su -c 'sh /prd/ecp/health_check/health_check_oam.sh' - ecp >> SMP_KCA_Report_$tdate.txt.tmp
+echo "10.0.149.46 Completed"
+for i in `cat server.txt`
+do
+sshpass -e ssh -q -o "StrictHostKeyChecking no" ecp@$i /prd/ecp/health_check/run_all_* >> SMP_KCA_Report_$tdate.txt.tmp
+echo "$i Completed"
+done
+cat SMP_KCA_Report_$tdate.txt.tmp | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" >> SMP_KCA_Report_$tdate.txt
+echo "Dear, Please find the attached SMP KCA Health Check Report." | mail -s 'SMP KCA Healthcheck Report' -a /nfsmount/Health_Check/SMP_KCA_Report_$tdate.txt Digital_A2P_Operation@etisalat.ae
+rm -f SMP_KCA_Report_$tdate.txt.tmp
+mv SMP_KCA_Report_$tdate.txt HC_Bkp/
