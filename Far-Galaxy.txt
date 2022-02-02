@@ -1,0 +1,29 @@
+Your tasks:
+
+Support of various customers with projects in the Linux and DevOps area -- 60
+Design and installation of complex IT infrastructures --																		80
+Installation of web and application servers in our virtualised environment 														80
+Automation of recurring tasks and processes, including Puppet and CI/CD processes  												65
+Administration and support of Linux systems 																					70
+Deployments and troubleshooting  																								90
+
+Your profile:
+
+A university degree won’t hurt, but we value practical knowledge more than formal education -									100
+You have several years of professional experience in the administration of Linux system environments -							70
+have a sound knowledge of common Linux distributions (such as RedHat, CentOS, Debian and Ubuntu) -								70
+You also have knowledge of Linux web services and application servers (Apache, Nginx, Tomcat, JBoss etc.) 						85
+as well as scripting (e.g. Bash, Python etc.) and 																				60
+automation (e.g. Ansible, Puppet etc.) 																							60
+You have experience in container technologies (e.g. Docker / Kubernetes) and/or in continuous delivery (Jenkins) 				70
+Bonus points for knowledge in the areas of virtualisation with Vmware 															80
+Bonus points for knowledge of databases (e.g. PostgreSQL, MySQL, MongoDB, etc.)												 	40
+A reliable and independent way of working, a structured and systematic style of working, good communication skills as well as written and spoken English complete your profile
+German language skills would be desirable, but are not a prerequisite
+
+Vmware
+https://petri.com/virtual_vmware_files_explained#:~:text=There%20are%20log%20files%2C%20vmdk,each%20of%20these%20VMware%20files.
+
+invitation
+
+https://fargalaxy.webex.com/fargalaxy/j.php?MTID=m94be4db75be7e902a5701ef5905a749d
